@@ -1,7 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-
-// for encrypting the password
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 BlogPost.init(
