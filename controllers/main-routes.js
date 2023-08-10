@@ -40,7 +40,7 @@ router.get('/post/:id', Authenticate, async (req, res) => {
                 attributes: [
                     'id',
                     'text',
-                    'userId'
+                    'user_id'
                 ],
             },
             ],
@@ -55,8 +55,35 @@ router.get('/post/:id', Authenticate, async (req, res) => {
 });
 
 // access user dashboard
-router.get('/dashboard', Authenticate, (req, res) => {
+router.get('/dashboard', Authenticate, async (req, res) => {
     // show only posts and comments from user
+    try {
+        const dbPostData = await BlogPost.findAll(
+            {
+                // only get posts for current user
+                where: { user_id: req.session.user } 
+            },
+            {
+            include: [
+                {
+                    model: User,
+                    attributes: { exclude: ['password']}
+                }
+            ]
+        });
+        // get each post from the data
+        const posts = dbPostData.map((post) =>
+            post.get({ plain: true })
+        );
+        res.render('dashboard', {
+            posts,
+            loggedIn: req.session.loggedIn,
+        });
+    } 
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {
