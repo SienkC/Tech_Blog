@@ -61,12 +61,23 @@ router.get('/post/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+    // if user is logged in, take them to homepage
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
 
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    // if user is logged in, take them to homepage
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
 });
 
 module.exports = router;
