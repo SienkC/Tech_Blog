@@ -28,9 +28,10 @@
     <main>
         {{{ body }}}
     </main>
-    <footer>
-        
-    </footer>
+    {{!-- if user is logged in, the logout script is available --}}
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
