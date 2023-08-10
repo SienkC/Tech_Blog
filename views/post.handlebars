@@ -4,7 +4,7 @@
         <h2 class="level-item has-text-centered title custom-text" id="post-title" data-post="{{post.id}}">{{post.title}}</h2>
         <p class="level-item has-text-centered">Created by: {{post.user.username}} {{format_date post.createdAt}}</p>
     </header>
-    <p class="p-5 custom-inner container is-fullhd">text</p>
+    <p class="p-5 custom-inner container is-fullhd">{{post.text}}</p>
 </section>
 {{!-- cycle through any comments --}}
 <div>
