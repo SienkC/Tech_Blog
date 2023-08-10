@@ -32,44 +32,31 @@ router.get('/', async (req, res) => {
 
 // GET one post
 router.get('/post/:id', Authenticate, async (req, res) => {
-    // If the user is not logged in, redirect the user to the login page
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    // } 
-    // else {
-    //     If the user is logged in, allow them to view the post
-        try {
-            const dbPostData = await BlogPost.findByPk(req.params.id, {
-                include: [
-                {
-                    model: Comment,
-                    attributes: [
-                        'id',
-                        'text',
-                        'userId'
-                    ],
-                },
+    try {
+        const dbPostData = await BlogPost.findByPk(req.params.id, {
+            include: [
+            {
+                model: Comment,
+                attributes: [
+                    'id',
+                    'text',
+                    'userId'
                 ],
-            });
-            const post = dbPostData.get({ plain: true });
-            res.render('post', { post, loggedIn: req.session.loggedIn });
-        } 
-        catch (err) {
-            console.log(err);
-            res.status(500).json(err);
-        }
-    // }
+            },
+            ],
+        });
+        const post = dbPostData.get({ plain: true });
+        res.render('post', { post, loggedIn: req.session.loggedIn });
+    } 
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // access user dashboard
 router.get('/dashboard', Authenticate, (req, res) => {
-    // If the user is not logged in, redirect the user to the login page
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    // } 
-    // else {
-        // show only posts and comments from user
-    // }
+    // show only posts and comments from user
 });
 
 router.get('/login', (req, res) => {
