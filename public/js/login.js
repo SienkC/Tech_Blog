@@ -9,6 +9,7 @@ const loginHandler = async (event) => {
     // check if both are not blank
     if (username && password) {
         // send username and password to api for validation
+        // (in userRoutes)
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
