@@ -5,33 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            {{!-- Only show logout if user is logged in --}}
-            {{#if loggedIn}}
-            <button id="logout">Logout</button>
-            {{!-- only shows login if user is logged out --}}
-            {{else}}
-            <a href="/login">Login</a>
-            {{/if}}
-        </nav>
-        <h1>
-        The Tech Blog
-        </h1>
-    </header>
-    <main>
-        {{{ body }}}
-    </main>
-    {{!-- if user is logged in, the logout script is available --}}
-    {{#if loggedIn}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
+<body class="container is-fullhd" >
+    <div id="main-body">
+        <header class="container is-fullhd">
+            <nav id ="custom-nav" class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-start">
+                    <a class="navbar-item custom-text" href="/">Home</a>
+                    <a class="navbar-item custom-text" href="/dashboard">Dashboard</a>
+                    {{!-- Only show logout if user is logged in --}}
+                    {{#if loggedIn}}
+                    <button class="navbar-item custom-text" id="logout">Logout</button>
+                    {{!-- only shows login if user is logged out --}}
+                    {{else}}
+                    <a class="navbar-item custom-text" href="/login">Login</a>
+                    {{/if}}
+                </div>
+            </nav>
+            <div class="block p-5">
+                <h1 id="custom-title" class="tag is-large">
+                The Tech Blog
+                </h1>
+            </div>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        {{!-- if user is logged in, the logout script is available --}}
+        {{#if loggedIn}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+#logout {
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+header {
+    background-color: #231010;
+    color: #D9EAD3;
+}
+
+#custom-nav {
+    background-color: #231010;
+    color: #D9EAD3;
+    font-weight: 500;
+}
+
+#custom-title {
+    background-color: #D9EAD3;
+    color: #231010;
+    font-size: 200%;
+    font-weight: 1000;
+}
+
+.custom-text {
+    color: #D9EAD3;
+    background-color: #231010;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    height:120%;
+}
+
+#main-body {
+    background-color: #D9EAD3;
+    min-height: 100%;
+}
+
+.custom-form , .custom-inner {
+    background-color: #D9EAD3;
+    color: #231010;
+}
+
+.custom-box {
+    color: #D9EAD3;
+    background-color: #231010;
+}
+
+.custom-button {
+    color: #D9EAD3;
+    background-color: #231010;
+}

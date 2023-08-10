@@ -1,8 +1,10 @@
 {{!-- show post details --}}
-<section>
-    <h2 id="post-title" data-post="{{post.id}}">{{post.title}}</h2>
-    <p>Created by: {{post.user.username}} {{format_date post.createdAt}}</p>
-    <p>text</p>
+<section class="box p-1 m-6 custom-box">
+    <header class="level is-mobile">
+        <h2 class="level-item has-text-centered title custom-text" id="post-title" data-post="{{post.id}}">{{post.title}}</h2>
+        <p class="level-item has-text-centered">Created by: {{post.user.username}} {{format_date post.createdAt}}</p>
+    </header>
+    <p class="p-5 custom-inner container is-fullhd">text</p>
 </section>
 {{!-- cycle through any comments --}}
 <div>
@@ -10,16 +12,16 @@
     {{> comment-details}}
     {{/each}}
 </div>
-<div>
-    <h2>Comment</h2>
-    <form id="add-comment">
+<div class="box p-1 m-6 custom-box">
+    <h2 class="title p-2 custom-text"></h2>
+    <form class="custom-form p-5 m-0" id="add-comment">
+        <div class="field">
+            <label class="label" for="comment-text">Comment:</label>
+            <textarea class="input" type="text" id="comment-text" ></textarea>
+        </div>
         <div>
-                <label for="comment-text">Text:</label>
-                <textarea type="text" id="comment-text" ></textarea>
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
+            <button class="button custom-button" type="submit">Submit</button>
+        </div>
     </form>
 </div>
 

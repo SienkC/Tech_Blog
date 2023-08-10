@@ -1,22 +1,21 @@
-<div>
-    <div>
-        <h2>Sign Up</h2>
-        <form id="signup-form">
-            <div>
-                <label for="username-signup">Username:</label>
-                <input type="text" id="username-signup" />
+
+    <div class="box p-1 m-6 custom-box">
+        <h2 class="title p-2 custom-text">Sign Up</h2>
+        <form class="custom-form p-5 m-0" id="signup-form">
+            <div class="field">
+                <label class="label" for="username-signup">Username:</label>
+                <input class="input" type="text" id="username-signup" />
+            </div>
+            <div class="field">
+                <label class="label" for="password-signup">Password:</label>
+                <input class="input" type="password" id="password-signup" />
             </div>
             <div>
-                <label for="password-signup">Password:</label>
-                <input type="password" id="password-signup" />
+                <button class="button custom-button" type="submit">sign up!</button>
             </div>
-            <div>
-                <button type="submit">sign up!</button>
-            </div>
+            <a class="m-5" href="/login">Already a user? Login here!</a>
         </form>
-        <a href="/login">Already a user? Login here!</a>
     </div>
-</div>
 
 {{!-- script to call signup functions --}}
 <script src="./js/signup.js"></script>

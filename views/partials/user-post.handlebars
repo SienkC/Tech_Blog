@@ -1,10 +1,9 @@
-<section >
+<section class="box p-1 m-6 custom-box">
     {{!-- links to post page --}}
     <a href="/post/{{id}}">
-        <header>
-            <h1>{{title}}</h1>
-            <p>
-                hello
+        <header class="level is-mobile">
+            <h1 class="level-item has-text-centered title custom-text">{{title}}</h1>
+            <p class="level-item has-text-centered">
                 {{!-- username grabbed from parent user --}}
                 {{format_date createdAt}}
             </p>
