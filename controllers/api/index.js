@@ -6,6 +6,6 @@ const postRoutes = require('./postRoutes');
 router.use('/users', userRoutes);
 
 // send to postRoutes file when /posts is in url
-// router.use('/posts', postRoutes);
+router.use('/posts', postRoutes);
 
 module.exports = router;
