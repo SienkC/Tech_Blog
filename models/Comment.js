@@ -9,6 +9,7 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        // references User
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -17,6 +18,7 @@ Comment.init(
                 key: 'id'
             }
         },
+        // references BlogPost
         post_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
