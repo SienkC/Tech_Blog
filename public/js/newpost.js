@@ -1,18 +1,20 @@
 const newPost = async () => {
     // call to logout in user routes
-    const response = await fetch('/api/users/logout', {
+    const response = await fetch('/api/posts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     });
 
-    // logging out ends in going to login page
+    // creating post goes back to dashboard
     if (response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/dashboard');
     } 
     else {
-        alert('Could not log out');
+        alert('Could not create post');
     }
 };
 
-// listen for user clicking new post
-document.querySelector('#newpost').addEventListener('click', newPost);
+// listen for user clicking new post submit
+document
+    .querySelector('#newpost-form')
+    .addEventListener('submit', newPost);
