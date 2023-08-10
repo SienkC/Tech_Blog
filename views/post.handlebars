@@ -1,0 +1,13 @@
+{{!-- show post details --}}
+<div>
+    <h2>{{title}}</h2>
+    <p>Created by: {{post.user.username}} {{format_date post.createdAt}}</p>
+    <p>text</p>
+</div>
+{{!-- cycle through any comments --}}
+<div>
+    {{#each post.comments as |comment|}}
+    {{> comment-details}}
+    {{/each}}
+</div>
+

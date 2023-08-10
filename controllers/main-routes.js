@@ -61,6 +61,7 @@ router.get('/post/:id', Authenticate, async (req, res) => {
             ],
         });
         const post = dbPostData.get({ plain: true });
+        console.log(post.comments[0].user.username);
         res.render('post', { post, loggedIn: req.session.loggedIn });
     } 
     catch (err) {
