@@ -1,10 +1,17 @@
 const router = require('express').Router();
-const { BlogPost, Comment } = require('../models');
+const { BlogPost, Comment, User } = require('../models');
 
 // Show all posts on homepage
 router.get('/', async (req, res) => {
     try {
-        const dbPostData = await BlogPost.findAll({});
+        const dbPostData = await BlogPost.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        });
 
         // get each post from the data
         const posts = dbPostData.map((post) =>
