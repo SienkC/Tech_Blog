@@ -1,6 +1,6 @@
 {{!-- show post details --}}
 <section>
-    <h2>{{title}}</h2>
+    <h2 id="post-title" data-post="{{post.id}}">{{post.title}}</h2>
     <p>Created by: {{post.user.username}} {{format_date post.createdAt}}</p>
     <p>text</p>
 </section>
@@ -23,6 +23,6 @@
     </form>
 </div>
 
-{{!-- script to go to create post screen --}}
-<script src="./js/newcomment.js"></script>
+{{!-- script to go to create comment screen --}}
+<script src="../js/newcomment.js"></script>
 
