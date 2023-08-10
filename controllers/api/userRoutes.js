@@ -51,6 +51,7 @@ router.post('/logout', (req, res) => {
 
 // create user
 router.post('/', async (req, res) => {
+    console.log("Check");
     try {
         // create new user with given username and password
         const userData = await User.create({
