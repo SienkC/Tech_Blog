@@ -1,7 +1,15 @@
 const newPost = async () => {
-    // call to logout in user routes
+    // don't let refresh
+    event.preventDefault();
+
+    // get title and text for new post
+    const title = document.querySelector('#post-title').value.trim();
+    const text = document.querySelector('#post-text').value.trim();
+
+    // call to posts
     const response = await fetch('/api/posts', {
         method: 'POST',
+        body: JSON.stringify({ title, text }),
         headers: { 'Content-Type': 'application/json' },
     });
 

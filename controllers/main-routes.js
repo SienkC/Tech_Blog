@@ -107,8 +107,6 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/newpost', Authenticate, (req, res) => {
-    // if user is logged in, take them to homepage
-
     res.render('newpost');
 });
 
