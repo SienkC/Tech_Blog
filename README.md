@@ -26,6 +26,8 @@ CMS-style blog site, where developers can publish their blog posts and comment o
   ## Usage <a id="usage"></a>
 
    The homepage shows posts created on the application. If the user is not logged in, they can not view the comments for the post or create their own. The user will be able to login or sign up using the form that appears when clicking "login". After logging in or signing up, the user can click on a post to view the comments on it and add a comment to it. When clicking on "dashboard" the user can view their posts and create a new post. 
+   
+   Access the deployed app here: [Tech Blog](https://murmuring-journey-02432-4c40dbbc06eb.herokuapp.com/)
 
    ![Login page](./public/images/screenshotlogin.PNG)
    ![Create a new post](./public/images/screenshotnewpost.png)
