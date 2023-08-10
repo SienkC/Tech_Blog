@@ -1,0 +1,13 @@
+<div>
+    {{!-- show all posts --}}
+    {{#each posts as |post|}}
+    {{> user-post}}
+    {{/each}}
+    {{!-- create new post button --}}
+    <button id="newpost">+ New Post</button>
+</div>
+
+{{!-- script to go to create post screen --}}
+<script src="./js/newpost.js"></script>
+
+
