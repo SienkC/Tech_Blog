@@ -60,6 +60,17 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// access user dashboard
+router.get('/dashboard', (req, res) => {
+    // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } 
+    else {
+        // show only posts and comments from user
+    }
+});
+
 router.get('/login', (req, res) => {
     // if user is logged in, take them to homepage
     if (req.session.loggedIn) {
