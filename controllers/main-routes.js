@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { BlogPost, Comment, User } = require('../models');
+const Authenticate = require('../utils/authenticate');
 
 // Show all posts on homepage
 router.get('/', async (req, res) => {
@@ -30,13 +31,13 @@ router.get('/', async (req, res) => {
 });
 
 // GET one post
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', Authenticate, async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    } 
-    else {
-        // If the user is logged in, allow them to view the post
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    // } 
+    // else {
+    //     If the user is logged in, allow them to view the post
         try {
             const dbPostData = await BlogPost.findByPk(req.params.id, {
                 include: [
@@ -57,18 +58,18 @@ router.get('/post/:id', async (req, res) => {
             console.log(err);
             res.status(500).json(err);
         }
-    }
+    // }
 });
 
 // access user dashboard
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', Authenticate, (req, res) => {
     // If the user is not logged in, redirect the user to the login page
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    } 
-    else {
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    // } 
+    // else {
         // show only posts and comments from user
-    }
+    // }
 });
 
 router.get('/login', (req, res) => {
